@@ -1,0 +1,37 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.env/
+
+# Jupyter notebooks (if any)
+*.ipynb
+
+# Mac system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Git metadata
+.git/
+.gitignore
+
+# Model checkpoints or logs (if applicable)
+*.log
+*.ckpt
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Docker-related
+Dockerfile
+docker-compose.yml
+
+# Exclude local data directory if not needed inside container
+data/
