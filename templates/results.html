@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Results</title>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <ul>
+        {% for stat, value in results.items() %}
+            <li><strong>{{ stat }}</strong>: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Make another prediction</a>
+</body>
+</html>

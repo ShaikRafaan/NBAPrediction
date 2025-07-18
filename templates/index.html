@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Player Stats Predictor</title>
+</head>
+<body>
+    <h1>NBA Player Stats Predictor</h1>
+    <form action="/predict" method="post">
+        <label>Height (cm):</label><br>
+        <input type="number" name="height_cm" step="0.1" required><br>
+
+        <label>Weight (kg):</label><br>
+        <input type="number" name="weight_kg" step="0.1" required><br>
+
+        <label>Games Played:</label><br>
+        <input type="number" name="gp" required><br>
+
+        <label>Minutes Played:</label><br>
+        <input type="number" name="min" required><br>
+
+        <label>Team:</label><br>
+        <input type="text" name="team" required><br>
+
+        <label>Position:</label><br>
+        <input type="text" name="position" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
