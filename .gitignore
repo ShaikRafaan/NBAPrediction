@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Model files
+/models/*.pkl
+
+# Data files (if you don't want to track local CSV datasets)
+data/*.csv
+
+# Docker
+*.pid
+*.tar
+docker-compose.override.yml
+
+# Python cache
+*.cache
+*.coverage
+
+# Environment variables
+.env
+
+# Coverage reports
+htmlcov/
+
+# Flask instance folder (if you create one)
+instance/
+
+# Pytest cache
+.pytest_cache/
+
+# MacOS metadata files
+*.DS_Store
+
+# Windows metadata files
+desktop.ini
+
+# Project-specific
+nba_predictor.db  # if you have a local sqlite file
