@@ -60,7 +60,7 @@ def predict():
 
     results = dict(zip(['PTS', 'AST', 'REB', 'FGM', 'FGA', 'FG%'], prediction))
 
-    return render_template('result.html', results=results)
+    return render_template('results.html', results=results)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
