@@ -7,9 +7,15 @@
     <h1>Prediction Results</h1>
     <ul>
         {% for stat, value in results.items() %}
-            <li><strong>{{ stat }}</strong>: {{ value }}</li>
+            <li><strong>{{ stat }} per game: </strong>: {{ value }}</li>
         {% endfor %}
     </ul>
+    <h3>Scatter Plots Comparing to Other Players (Same Position)</h3>
+        {% for path in scatter_paths %}
+        <div style="margin-bottom: 30px;">
+            <img src="{{ path }}" alt="Scatter Plot" style="max-width: 100%;">
+        </div>
+        {% endfor %}
     <a href="/">Make another prediction</a>
 </body>
 </html>
