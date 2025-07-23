@@ -18,11 +18,19 @@
         <label>Minutes Played:</label><br>
         <input type="number" name="min" required><br>
 
-        <label>Team:</label><br>
-        <input type="text" name="team" required><br>
+        <label for="team">Team:</label>
+            <select name="team" required>
+                {% for t in team %}
+                <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label>Position:</label><br>
-        <input type="text" name="position" required><br><br>
+        <label for="position">Position:</label>
+            <select name="position" required>
+                {% for p in position %}
+                <option value="{{ p }}">{{ p }}</option>
+                {% endfor %}
+            </select><br>
 
         <input type="submit" value="Predict">
     </form>
