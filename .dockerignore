@@ -34,4 +34,3 @@ Dockerfile
 docker-compose.yml
 
 # Exclude local data directory if not needed inside container
-data/

@@ -4,9 +4,7 @@ FROM python:3.11-slim
 #Sets the working directory inside the container to app
 WORKDIR /app
 #Copies everything from the current project directory to the /app directory inside the container
-COPY . /app
-
-COPY requirements.txt .
+COPY . .
 #Executes commands to install dependencies inside the container
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
