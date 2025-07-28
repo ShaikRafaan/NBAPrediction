@@ -1,1 +1,149 @@
-This is an AI model trained on statistics from the NBA.To predict the statistics of a possible rookie or a new player based off of height,weight and the playstyle of the team the get drafted to.
+
+# 🏀 NBA Player Stats Predictor
+
+This project is a Flask web application that uses a machine learning model to predict an NBA player's key performance statistics (like points, assists, and rebounds) based on their physical attributes, playing time, team, and position.
+
+🔗 **Live Deployment (Optional)**: _Add your deployment URL here if available._
+
+---
+
+## 📊 Features
+
+- Predict NBA player stats: **PTS, AST, REB, FGM, FGA, FG%**
+- Interactive web form with dropdowns for **team** and **position**
+- Scaled prediction model to avoid unrealistic values
+- Per-game stat conversion
+- Interactive scatter plots comparing predicted stats to real NBA players (by position)
+
+---
+
+## 🚀 Demo
+
+<img src="https://user-images.githubusercontent.com/your-image-here" alt="demo screenshot" width="600"/>
+
+---
+
+## 🧠 Machine Learning Model
+
+- Model Type: `XGBRegressor` inside a `MultiOutputRegressor`
+- Trained on real NBA player data
+- Inputs:
+  - `height_cm`, `weight_kg`, `gp`, `min`
+  - One-hot encoded `team` and `position`
+- Outputs:
+  - Points, Assists, Rebounds, Field Goals Made/Attempted, FG%
+
+---
+
+## 🧰 Tech Stack
+
+- Python 3.11
+- Flask
+- Pandas, NumPy, scikit-learn
+- Matplotlib for graphing
+- Docker for containerized deployment
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── app.py                  # Main Flask application
+├── models/
+│   └── nba_player_stats_predictor.pkl
+├── data/
+│   └── nba_players_full_stats.csv  # Dataset (not in repo by default)
+├── templates/
+│   ├── index.html          # Input form page
+│   └── results.html        # Prediction results and graphs
+├── static/
+│   └── style.css
+├── requirements.txt
+└── Dockerfile
+```
+
+---
+
+## ⚙️ Installation (Local)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ShaikRafaan/NBAPrediction.git
+cd NBAPrediction
+```
+
+### 2. Place the dataset
+
+Place `nba_players_full_stats.csv` inside the `data/` folder. This file is not included in the repo.
+
+### 3. Create a virtual environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+```
+
+### 4. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Run the app
+
+```bash
+flask run --host=0.0.0.0 --port=5000
+```
+
+---
+
+## 🐳 Docker Deployment
+
+### 1. Build the Docker image
+
+```bash
+docker build -t nba_predictor .
+```
+
+### 2. Run the container
+
+```bash
+docker run -p 5000:5000 nba_predictor
+```
+
+> Ensure `nba_players_full_stats.csv` is in the `data/` folder before building. Or mount it:
+
+```bash
+docker run -p 5000:5000 -v $(pwd)/data:/app/data nba_predictor
+```
+
+---
+
+## 📈 Future Improvements
+
+- Deploy to Render / Heroku / AWS
+- Add more player stats (e.g., steals, blocks, turnovers)
+- Use real-time API to enhance prediction
+- Save player predictions and allow history tracking
+- Improve frontend with charts.js or Plotly
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
+---
+
+## 📄 License
+
+MIT License © 2025 [Rafaan Shaik](https://github.com/ShaikRafaan)
+
+---
+
+## 🙌 Acknowledgements
+-NBA API
+- NBA Stats dataset (source: [Kaggle](https://www.kaggle.com/))
+- Flask, XGBoost, scikit-learn, Pandas
