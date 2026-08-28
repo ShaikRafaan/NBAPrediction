@@ -28,7 +28,9 @@ Thumbs.db
 # Model files
 /models/*.pkl
 
-
+# Node modules
+node_modules/
+package-lock.json
 # Docker
 *.pid
 *.tar
